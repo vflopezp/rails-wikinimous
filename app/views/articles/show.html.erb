@@ -1,0 +1,18 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-primary alert-dismissible alert-<%= key %>">
+    <%= value %>
+    <a href="#" class="close" data-dismiss="alert">x</a>
+    </div>
+<% end %>
+
+<h2 class="border-bottom py-3">
+  <%= @article.title %>
+  <%= link_to "✏️", edit_article_path %>
+  <%= link_to "🗑️",
+    article_path(@article.id),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+</h2>
+<br>
+<p><%= @article.content %></p>
+

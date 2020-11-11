@@ -1,0 +1,16 @@
+<h1>Edit article</h1>
+<%= form_for(@article) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class:"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_area :content, class:"form-control" %>
+  </div>
+  <%= f.submit "Update article", class:"btn btn-outline-dark" %>
+<% end %>
+
+<%= link_to "Show", article_path(@article.id), class:"border-right px-1" %>
+<%= link_to "Back", articles_path %>
+
